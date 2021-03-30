@@ -1,0 +1,48 @@
+console:
+    ng new proyect
+
+console:
+    ng g c home --skipTests
+
+app-routing.module.ts:
+    import { HomeComponent } from './home/home.component';
+
+    const routes: Routes = [
+        { path: 'home', component: HomeComponent },
+        { path: '', redirectTo: '/home', pathMatch: 'full' }
+    ];
+
+console:
+    ng add angular material
+
+console:
+    ng g m material
+
+material.module.ts:
+    import { MatSidenavModule } from '@angular/material/sidenav';
+    const MaterialModules = [ MatSidenavModule  ];
+    imports: [MaterialModules], exports: [ MaterialModules ]
+
+app.module.ts:
+    import { MaterialModule } from './material/material.module';
+    imports: [MaterialModule],
+
+console:
+    npm install @angular/flex-layout @angular/cdk --save
+
+Reiniciar servidor.
+
+app.module.ts:
+    import { FlexLayoutModule } from '@angular/flex-layout';
+    imports: [ FlexLayoutModule ]
+
+obtener el IDComponent del layout.component.ts
+    @Component({
+        selector: 'app-layout' <-- IDComponent
+    })
+
+app.component.html:
+    <app-layout></app-layout>
+
+
+
